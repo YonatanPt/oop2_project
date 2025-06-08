@@ -13,7 +13,7 @@ if (NOT MSVC)
     target_link_options(${CMAKE_PROJECT_NAME} PRIVATE $<$<CONFIG:DEBUG>:-fsanitize=address>)
 endif()
 
-add_subdirectory (include)
+add_subdirectory (include "include") #changed
 add_subdirectory (src "src") #chenged
 add_subdirectory (resources)
 

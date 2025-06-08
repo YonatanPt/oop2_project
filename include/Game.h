@@ -4,20 +4,34 @@
 #include <SFML/Audio.hpp>     // For audio playback and recording
 #include <SFML/Network.hpp>   // For networking features
 
-#include "Window.h"
+#include "Texture.h"
+#include "snake.h"
+#include "Board.h"
+#include "io.h"
+
 class Game
 {
 public:
 
 	Game();
-
+	void createStartWindow();
+	void createWindow();
+	void loadTextures();
 	void run();
 	void update();
 	void render();
 
 private:
 
-	Window m_window; // Window object for rendering
-	sf::Clock m_clock; // Clock to manage time
- 	
+	sf::RenderWindow m_startWindow;
+	sf::RenderWindow m_window;
+	int m_high;                
+	int m_width;
+	Texture m_texture;
+	snake m_snake; 
+	Board m_board;  
+	sf::Clock m_clock; 
+	float m_deltaTime = 0.0f;
+	sf::Sprite m_startButton;  
+	
 };

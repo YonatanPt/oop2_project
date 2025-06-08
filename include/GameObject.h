@@ -1,14 +1,15 @@
-  
+#pragma once
 #include <SFML/Graphics.hpp> 
+
 class GameObject {
 public:
-	GameObject();
- 
+	GameObject(sf::Texture& texture);
+
 	virtual void draw(sf::RenderWindow& window) = 0;
 
 	virtual void setPosition(sf::Vector2f position);
-	 
-private:
+
+protected:
 
 	sf::Vector2f m_position; // Position of the game object
 	sf::Sprite m_sprite;      // Sprite for rendering the game object 

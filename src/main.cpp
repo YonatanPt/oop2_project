@@ -1,9 +1,16 @@
 #include "Game.h"
-
+#include <iostream> 
 int main()
 {
-	Game game; // Create a Game object
-	game.run(); // Start the game loop
-	return 0; // Exit the program
+	try
+	{
+		Game game; // Create a Game object
+		game.run(); // Start the game loop
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << "Error: " << e.what() << std::endl; // Catch and display any exceptions
+		return EXIT_FAILURE; // Exit with failure status
+	}
 }
  
